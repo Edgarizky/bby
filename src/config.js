@@ -63,7 +63,7 @@ export const config = {
     firstName: "Dewi Tri Octariani",
     lastName: "Mulyono",
     senderName: "Edgar",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+    photo: "/images/moment_portrait_dewi.png",
     letter: `"Selamat ulang tahun yang ke-23, Sayang. Di hari spesialmu ini, aku cuma mau bilang terima kasih karena sudah lahir ke dunia dan membawa begitu banyak kebahagiaan ke hidupku. Kamu adalah hal terindah yang pernah hadir dalam hidupku, dan aku berharap bisa terus merayakan hari-hari bahagiamu di tahun-tahun berikutnya. I love you so much, kini dan nanti."`,
     signature: "— Edgar ❤️",
   },
@@ -75,16 +75,16 @@ export const config = {
     songTitle: "Cinderella - Mac Miller (Lyrics) ft. Ty Dolla $ign",
     frames: [
       {
-        url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
-        caption: "Your gorgeous smile ✨"
+        url: "/images/playlist_glasses_blazer.jpg",
+        caption: "Cute glasses look ✨"
       },
       {
-        url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
-        caption: "My favorite human 💖"
+        url: "/images/playlist_glasses_couch.jpg",
+        caption: "Prettiest girl in the world 💖"
       },
       {
-        url: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop",
-        caption: "Always in my heart 🌸"
+        url: "/images/playlist_cafe_smile.png",
+        caption: "Your beautiful smile 🌸"
       }
     ]
   },
