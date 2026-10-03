@@ -1,0 +1,4703 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Italianno&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-deep: #14040e;
+  --bg-purple: #2b0222;
+  --bg-magenta: #7e025b;
+  --bg-vibrant: #ff0dc3;
+  --text-creamy: #fbf7ee;
+  --gold-glow: rgba(255, 204, 0, 0.6);
+  --gold-border: #d4af37;
+  --green-btn: #5dc54f;
+  --font-script: 'Alex Brush', 'Great Vibes', cursive;
+  --font-cursive: 'Great Vibes', cursive;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: var(--text-creamy);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* App Background with Dreamy Gradient & Ambient Vignette */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 80% 45%, #e10098 0%, #a20070 30%, #4a023b 65%, #14040e 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* App Viewport Frame */
+.app-viewport-frame {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================================= */
+/* GLOBAL MOBILE LANDSCAPE ENGINE (ALL PAGES IMMERSIVE)      */
+/* Transforms all pages into 90° rotated widescreen landscape */
+/* ========================================================= */
+@media (max-width: 650px) and (orientation: portrait) {
+  .app-container.force-landscape {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .app-container.force-landscape .app-viewport-frame {
+    min-height: unset !important;
+    min-width: unset !important;
+    width: 100vh;
+    width: 100dvh;
+    height: 100vw;
+    height: 100dvw;
+    max-width: 100vh;
+    max-width: 100dvh;
+    max-height: 100vw;
+    max-height: 100dvw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+    overflow: hidden;
+  }
+
+  .app-container.force-landscape .page-screen {
+    width: 100%;
+    height: 100%;
+    min-height: unset !important;
+    max-height: 100% !important;
+    padding: 6px 14px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* 1. Envelope Page in Landscape */
+  .app-container.force-landscape .envelope-title {
+    font-size: 2.3rem;
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+
+  .app-container.force-landscape .envelope-wrapper {
+    transform: scale(0.76);
+    transform-origin: center center;
+    margin: -12px auto -8px auto;
+  }
+
+  .app-container.force-landscape .envelope-subtitle {
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* 2. Celebration Page in Landscape */
+  .app-container.force-landscape .celebration-screen {
+    padding: 4px 10px 24px 10px;
+    justify-content: center;
+  }
+
+  .app-container.force-landscape .celebration-collage-wrapper.enlarged {
+    height: 480px;
+    transform: scale(0.64) !important;
+    transform-origin: center center;
+    margin: -30px auto -15px auto;
+  }
+
+  .app-container.force-landscape .tap-surprise-link-btn {
+    margin-top: 0px;
+    padding: 6px 20px;
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* 3. Surprise Menu Page in Landscape (1-row widescreen dashboard) */
+  .app-container.force-landscape .choose-title {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  .app-container.force-landscape .surprise-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(14px, 3.5vw, 30px);
+    width: 100%;
+    max-width: 880px;
+  }
+
+  .app-container.force-landscape .surprise-item {
+    transform: scale(0.88);
+  }
+
+  .app-container.force-landscape .surprise-item:hover {
+    transform: scale(0.98);
+  }
+
+  .app-container.force-landscape .icon-glow-container {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 6px;
+  }
+
+  .app-container.force-landscape .golden-ray-burst {
+    width: 118px;
+    height: 118px;
+  }
+
+  .app-container.force-landscape .surprise-icon-wrapper {
+    width: 78px;
+    height: 78px;
+  }
+
+  .app-container.force-landscape .icon-camera-img,
+  .app-container.force-landscape .icon-watch-img,
+  .app-container.force-landscape .icon-disc-img,
+  .app-container.force-landscape .icon-gift-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .app-container.force-landscape .surprise-item-title {
+    font-size: 1.5rem;
+    text-underline-offset: 4px;
+  }
+
+  /* 4. Journey Wall in Landscape */
+  .app-container.force-landscape .journey-screen {
+    min-height: unset !important;
+    max-height: 100% !important;
+    height: 100% !important;
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .app-container.force-landscape .journey-wall-wrapper {
+    height: 480px;
+    transform: scale(0.67) !important;
+    transform-origin: center center;
+    margin: -18px auto 0 auto;
+  }
+
+  /* 5. Moment Canvas in Landscape */
+  .app-container.force-landscape .moment-screen {
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .app-container.force-landscape .moment-canvas-wrapper {
+    min-height: unset;
+    height: 520px;
+    transform: scale(0.63) !important;
+    transform-origin: center center;
+    margin: -18px auto 0 auto;
+  }
+
+  /* 6. Playlist in Landscape */
+  .app-container.force-landscape .playlist-screen {
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .app-container.force-landscape .playlist-showcase-container {
+    transform: scale(0.86) !important;
+    transform-origin: center center;
+    margin: -8px auto 0 auto;
+  }
+
+  /* 7. Gift Page in Landscape */
+  .app-container.force-landscape .gift-reveal-box {
+    transform: scale(0.76) !important;
+    transform-origin: center center;
+    margin: -15px auto 0 auto;
+    padding: 18px 28px;
+  }
+
+  .app-container.force-landscape .gift-title {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+  }
+
+  .app-container.force-landscape .gift-voucher-card {
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .app-container.force-landscape .gift-unopened-box {
+    transform: scale(0.78);
+    transform-origin: center center;
+    margin: -10px auto 0 auto;
+  }
+
+  /* Navigation & Floating Controls in Landscape */
+  .app-container.force-landscape .global-landscape-toggle-btn {
+    top: 10px;
+    left: 14px;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+  }
+
+  .app-container.force-landscape .top-nav {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    left: 14px;
+    z-index: 120;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .app-container.force-landscape .top-nav > * {
+    pointer-events: auto;
+  }
+
+  .app-container.force-landscape .back-btn {
+    padding: 5px 18px;
+    font-size: 0.85rem;
+    margin-left: auto;
+  }
+
+  .app-container.force-landscape .global-footer-credit {
+    bottom: 8px;
+    font-size: 0.72rem;
+  }
+
+  .app-container.force-landscape .floating-music-btn {
+    bottom: 10px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .app-container.force-landscape .qr-modal-btn {
+    bottom: 10px;
+    left: 14px;
+    padding: 5px 12px;
+    font-size: 0.74rem;
+  }
+}
+
+/* Also support Physical Landscape View (When phone is held sideways) */
+@media (orientation: landscape) and (max-height: 650px) {
+  .app-container .app-viewport-frame {
+    min-height: unset !important;
+    width: 100vw;
+    height: 100vh;
+    transform: none !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .journey-screen,
+  .page-screen {
+    min-height: unset !important;
+    height: 100vh;
+    padding: 6px 14px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .envelope-title {
+    font-size: 2.3rem;
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+
+  .envelope-wrapper {
+    transform: scale(0.76);
+    transform-origin: center center;
+    margin: -12px auto -8px auto;
+  }
+
+  .celebration-screen {
+    padding: 4px 10px 24px 10px;
+    justify-content: center;
+  }
+
+  .celebration-collage-wrapper.enlarged {
+    height: 480px;
+    transform: scale(0.64) !important;
+    transform-origin: center center;
+    margin: -30px auto -15px auto;
+  }
+
+  .choose-title {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
+  .surprise-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(14px, 3.5vw, 30px);
+    width: 100%;
+    max-width: 880px;
+  }
+
+  .surprise-item {
+    transform: scale(0.88);
+  }
+
+  .icon-glow-container {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 6px;
+  }
+
+  .golden-ray-burst {
+    width: 118px;
+    height: 118px;
+  }
+
+  .surprise-icon-wrapper {
+    width: 78px;
+    height: 78px;
+  }
+
+  .icon-camera-img,
+  .icon-watch-img,
+  .icon-disc-img,
+  .icon-gift-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .surprise-item-title {
+    font-size: 1.5rem;
+    text-underline-offset: 4px;
+  }
+
+  .journey-screen {
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .journey-wall-wrapper {
+    height: 480px;
+    transform: scale(0.67) !important;
+    transform-origin: center center;
+    margin: -18px auto 0 auto;
+  }
+
+  .moment-screen {
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .moment-canvas-wrapper {
+    min-height: unset;
+    height: 520px;
+    transform: scale(0.63) !important;
+    transform-origin: center center;
+    margin: -18px auto 0 auto;
+  }
+
+  .playlist-screen {
+    padding: 6px 12px 24px 12px;
+    justify-content: center;
+  }
+
+  .playlist-showcase-container {
+    transform: scale(0.86) !important;
+    transform-origin: center center;
+    margin: -8px auto 0 auto;
+  }
+
+  .gift-reveal-box {
+    transform: scale(0.76) !important;
+    transform-origin: center center;
+    margin: -15px auto 0 auto;
+    padding: 18px 28px;
+  }
+
+  .gift-title {
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+  }
+
+  .gift-unopened-box {
+    transform: scale(0.78);
+    transform-origin: center center;
+    margin: -10px auto 0 auto;
+  }
+
+  .global-landscape-toggle-btn {
+    display: none;
+  }
+
+  .top-nav {
+    top: 10px;
+    right: 14px;
+    left: 14px;
+  }
+
+  .back-btn {
+    padding: 5px 18px;
+    font-size: 0.85rem;
+  }
+
+  .global-footer-credit {
+    bottom: 8px;
+    font-size: 0.72rem;
+  }
+
+  .floating-music-btn {
+    bottom: 10px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .qr-modal-btn {
+    bottom: 10px;
+    left: 14px;
+    padding: 5px 12px;
+    font-size: 0.74rem;
+  }
+}
+
+/* Global Landscape Mode Switcher Button */
+.global-landscape-toggle-btn {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 120;
+  background: rgba(30, 5, 25, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 13, 195, 0.4);
+  color: #ffd8f5;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 13, 195, 0.3);
+  transition: all 0.25s ease;
+}
+
+.global-landscape-toggle-btn:hover {
+  background: rgba(60, 10, 50, 0.95);
+  border-color: #ff0dc3;
+  transform: scale(1.05);
+}
+
+@media (min-width: 651px) {
+  .global-landscape-toggle-btn {
+    display: none;
+  }
+}
+
+/* Floating particles & sparkles */
+.ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #ffb8ea, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ffd166, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.35;
+  animation: sparkleDrift 40s linear infinite;
+}
+
+@keyframes sparkleDrift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 400px; }
+}
+
+/* Top Navigation / Controls Bar */
+.top-nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 115;
+  pointer-events: none;
+}
+
+.top-nav > * {
+  pointer-events: auto;
+}
+
+/* Green Iconic Back Button */
+.back-btn {
+  background: var(--green-btn);
+  color: #111111;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  border: 2px solid #3fa232;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(93, 197, 79, 0.45);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-left: auto;
+}
+
+.back-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(93, 197, 79, 0.65);
+}
+
+.back-btn:active {
+  transform: scale(0.96);
+}
+
+/* Music Player Floating Widget */
+.floating-music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  background: rgba(30, 5, 25, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  color: var(--text-creamy);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.floating-music-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--bg-vibrant);
+  box-shadow: 0 0 20px rgba(255, 13, 195, 0.6);
+}
+
+.floating-music-btn.playing {
+  animation: rotateVinyl 4s linear infinite;
+  border-color: #ffd166;
+}
+
+@keyframes rotateVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* QR Code Button at bottom left */
+.qr-modal-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99;
+  background: rgba(30, 5, 25, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  color: var(--text-creamy);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qr-modal-btn:hover {
+  background: rgba(60, 10, 50, 0.95);
+  border-color: var(--bg-vibrant);
+  box-shadow: 0 0 15px rgba(255, 13, 195, 0.5);
+}
+
+/* Page Frame Container */
+.page-screen {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  animation: fadeInPage 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ========================================================= */
+/* PAGE 0: ENVELOPE STYLES                                   */
+/* ========================================================= */
+.envelope-title {
+  font-family: var(--font-cursive);
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 400;
+  color: var(--text-creamy);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  line-height: 1.1;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: min(90vw, 440px);
+  height: 270px;
+  cursor: pointer;
+  perspective: 1200px;
+  transition: transform 0.4s ease;
+}
+
+.envelope-wrapper:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.envelope-wrapper.shake {
+  animation: envelopeShake 0.5s ease-in-out;
+}
+
+@keyframes envelopeShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px) rotate(-2deg); }
+  40%, 80% { transform: translateX(8px) rotate(2deg); }
+}
+
+.envelope-base {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fbf7ee;
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Envelope Folds (Lines) */
+.envelope-fold-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 135px solid transparent;
+  border-bottom: 135px solid transparent;
+  border-left: 220px solid #f3ece0;
+  z-index: 2;
+  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.05));
+}
+
+.envelope-fold-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 135px solid transparent;
+  border-bottom: 135px solid transparent;
+  border-right: 220px solid #ede4d5;
+  z-index: 2;
+  filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.05));
+}
+
+.envelope-fold-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 220px solid transparent;
+  border-right: 220px solid transparent;
+  border-bottom: 150px solid #e7ddcd;
+  z-index: 3;
+  filter: drop-shadow(0 -2px 3px rgba(0, 0, 0, 0.06));
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 220px solid transparent;
+  border-right: 220px solid transparent;
+  border-top: 160px solid #fbf7ee;
+  transform-origin: top;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.envelope-wrapper.opened .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+/* Wax Seal Button in Center */
+.wax-seal {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 82px;
+  height: 82px;
+  background: radial-gradient(circle at 35% 35%, #ca00a5 0%, #870068 50%, #4c003d 100%);
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.4), inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 13, 195, 0.3);
+}
+
+.wax-seal::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 13, 195, 0.8);
+}
+
+.wax-seal-icon {
+  color: #ffd8f5;
+  font-size: 28px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.envelope-subtitle {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #fbf7ee;
+  text-align: center;
+  margin-top: 35px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* ========================================================= */
+/* PAGE 1: CELEBRATION (COLLAGE SCRAPBOOK - ENLARGED & FLORAL)*/
+/* ========================================================= */
+.celebration-screen {
+  padding: 30px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebration-collage-wrapper.enlarged {
+  position: relative;
+  width: 920px;
+  height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 940px) {
+  .celebration-collage-wrapper.enlarged {
+    transform: scale(0.82);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 780px) {
+  .celebration-collage-wrapper.enlarged {
+    transform: scale(0.68);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 600px) {
+  .celebration-collage-wrapper.enlarged {
+    transform: scale(0.54);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 440px) {
+  .celebration-collage-wrapper.enlarged {
+    transform: scale(0.42);
+    transform-origin: center center;
+  }
+}
+
+/* Centerpiece: Enlarged Open Envelope */
+.collage-envelope {
+  position: absolute;
+  top: 52%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 370px;
+  height: 230px;
+  z-index: 5;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: envelopeSmoothGlide 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+@keyframes envelopeSmoothGlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -40%, 0) scale3d(0.9, 0.9, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+  }
+}
+
+/* Open Top Flap (pointing upward) */
+.envelope-top-flap-open {
+  position: absolute;
+  top: -125px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 185px solid transparent;
+  border-right: 185px solid transparent;
+  border-bottom: 128px solid #eae1d1;
+  filter: drop-shadow(0 -5px 8px rgba(0, 0, 0, 0.18));
+  z-index: 1;
+}
+
+/* Torn White Paper Card emerging from envelope */
+.torn-paper-card {
+  position: absolute;
+  top: -115px;
+  left: 18px;
+  width: 334px;
+  height: 230px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 6;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Jagged Torn Paper Top Edge */
+.torn-edge-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background: radial-gradient(circle at 10px 0px, transparent 8px, #ffffff 8.5px);
+  background-size: 16px 14px;
+  background-repeat: repeat-x;
+}
+
+.torn-card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 18px;
+}
+
+.torn-title {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 3.6rem;
+  color: #380735;
+  text-align: center;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 
+    0 0 10px rgba(225, 22, 151, 0.5),
+    0 0 22px rgba(255, 110, 199, 0.35);
+}
+
+.torn-date {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #430c3c;
+  text-align: center;
+  margin-top: 8px;
+  text-shadow: 0 0 8px rgba(225, 22, 151, 0.35);
+}
+
+/* Envelope Pocket Body */
+.envelope-pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 370px;
+  height: 190px;
+  background: #f6efe3;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  z-index: 7;
+}
+
+.pocket-fold-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 95px solid transparent;
+  border-bottom: 95px solid transparent;
+  border-left: 185px solid #ece4d4;
+  z-index: 4;
+}
+
+.pocket-fold-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 95px solid transparent;
+  border-bottom: 95px solid transparent;
+  border-right: 185px solid #e5dccb;
+  z-index: 4;
+}
+
+.pocket-fold-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 185px solid transparent;
+  border-right: 185px solid transparent;
+  border-bottom: 125px solid #ddd2be;
+  z-index: 5;
+}
+
+.collage-wax-seal {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e10098 0%, #8e0078 65%, #3d0034 100%);
+  z-index: 8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.seal-inner-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================================= */
+/* LEFT SIDE ELEMENTS (Heart Photo, Polaroid, Rose, Butterfly)*/
+/* ========================================================= */
+
+/* 1. Heart Photo Container with Glowing Neon Pink Halo */
+.collage-heart-photo-container {
+  position: absolute;
+  top: 6%;
+  left: 2%;
+  z-index: 10;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: heartPopSmooth 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.18s both;
+  transition: transform 0.3s ease;
+}
+
+@keyframes heartPopSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-24px, 20px, 0) rotate(-18deg) scale3d(0.65, 0.65, 1);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(2px, -3px, 0) rotate(-6deg) scale3d(1.04, 1.04, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-8deg) scale3d(1, 1, 1);
+  }
+}
+
+.collage-heart-photo-container:hover {
+  transform: rotate(-3deg) scale(1.06);
+}
+
+.heart-pink-glow {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 185px;
+  height: 175px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 13, 195, 0.95) 0%, rgba(225, 22, 151, 0.5) 55%, transparent 80%);
+  filter: blur(14px);
+  z-index: 1;
+}
+
+.heart-photo-frame {
+  position: relative;
+  z-index: 2;
+  width: 165px;
+  height: 155px;
+  clip-path: url(#celebration-heart-clip);
+  background: #111;
+  filter: drop-shadow(0 0 16px rgba(255, 13, 195, 0.8)) drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55));
+}
+
+.heart-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. Soft Blooming Pink Rose beside heart */
+.flower-left-rose {
+  position: absolute;
+  top: 22%;
+  left: 17%;
+  z-index: 12;
+  width: 95px;
+  height: 95px;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: roseBloomLeftSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 4s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes roseBloomLeftSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-18px, 18px, 0) scale3d(0.8, 0.8, 1) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+/* 3. Tilted Polaroid Photo (bottom left) */
+.collage-polaroid-frame {
+  position: absolute;
+  top: 44%;
+  left: 4%;
+  z-index: 9;
+  background: #ffffff;
+  padding: 10px 10px 30px 10px;
+  border-radius: 4px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: polaroidSmoothSlide 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.3s ease;
+}
+
+@keyframes polaroidSmoothSlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(-25px, 25px, 0) rotate(-20deg) scale3d(0.85, 0.85, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-14deg) scale3d(1, 1, 1);
+  }
+}
+
+.collage-polaroid-frame:hover {
+  transform: rotate(-8deg) scale(1.08);
+  z-index: 16;
+}
+
+.collage-polaroid-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+/* 4. 3D Pink Butterfly with open wings */
+.collage-butterfly {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  z-index: 15;
+  width: 120px;
+  height: 105px;
+  filter: drop-shadow(0 8px 20px rgba(255, 77, 166, 0.7));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: butterflyGlideInSmooth 0.7s cubic-bezier(0.16, 1, 0.3, 1) both, butterflyFlutter 3.2s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes butterflyGlideInSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 25px, 0) rotate(-10deg) scale3d(0.7, 0.7, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(8deg) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes butterflyFlutter {
+  0% { transform: rotate(6deg) translateY(0); }
+  50% { transform: rotate(12deg) translateY(-5px) scale(1.04); }
+  100% { transform: rotate(8deg) translateY(-2px); }
+}
+
+@keyframes gentleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+/* ========================================================= */
+/* RIGHT SIDE ELEMENTS (Photostrip, Rose, Lily, Blossoms)    */
+/* ========================================================= */
+
+/* 1. Vertical Photobooth Filmstrip (3 Photos) */
+.collage-photostrip {
+  position: absolute;
+  top: 4%;
+  left: 71%;
+  z-index: 10;
+  background: #ffffff;
+  padding: 12px 12px 22px 12px;
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: photostripSmoothSlide 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.3s ease;
+}
+
+@keyframes photostripSmoothSlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(30px, -20px, 0) rotate(20deg) scale3d(0.85, 0.85, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(14deg) scale3d(1, 1, 1);
+  }
+}
+
+.collage-photostrip:hover {
+  transform: rotate(9deg) scale(1.06);
+  z-index: 16;
+}
+
+.photostrip-cell {
+  width: 114px;
+  height: 108px;
+  background: #111;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.photostrip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 1. Top-Left Big Blooming Pink Rose on Photostrip */
+.photostrip-flower-rose {
+  position: absolute;
+  top: -42px;
+  left: -48px;
+  z-index: 12;
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: photostripRoseBloomSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 3.5s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes photostripRoseBloomSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-15px, -15px, 0) scale3d(0.6, 0.6, 1) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+/* 2. Pink Star Lily beside photostrip waist */
+.photostrip-flower-lily {
+  position: absolute;
+  top: 36%;
+  left: -44px;
+  z-index: 14;
+  width: 88px;
+  height: 88px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: photostripLilyBloomSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 4s ease-in-out 0.7s infinite alternate-reverse;
+}
+
+@keyframes photostripLilyBloomSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-15px, 5px, 0) scale3d(0.6, 0.6, 1) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+/* 3. White Cherry/Jasmine Blossom Cluster bottom-right */
+.photostrip-flower-blossoms {
+  position: absolute;
+  bottom: -28px;
+  right: -38px;
+  z-index: 13;
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: photostripBlossomsBloomSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 3s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes photostripBlossomsBloomSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(15px, 15px, 0) scale3d(0.6, 0.6, 1) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+/* Real Flower & Butterfly Image Utilities */
+.real-flower-img,
+.real-butterfly-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+/* TAP FOR SURPRISE Link Button */
+.tap-surprise-link-btn {
+  background: none;
+  border: none;
+  color: #fbf7ee;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  cursor: pointer;
+  padding: 12px 24px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 20;
+}
+
+.tap-surprise-link-btn:hover {
+  color: #ffd8f5;
+  text-shadow: 0 0 15px #ff0dc3;
+  transform: translateY(-3px);
+}
+
+/* ========================================================= */
+/* PAGE 2: CHOOSE THE SURPRISE (MENU)                        */
+/* ========================================================= */
+.choose-title {
+  font-family: var(--font-cursive);
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  color: #fbf7ee;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.surprise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 5vw, 60px);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.surprise-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.surprise-item:hover {
+  transform: translateY(-12px) scale(1.08);
+}
+
+/* Modern Romantic Ambient Aura behind icons */
+.icon-glow-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.golden-ray-burst {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(255, 110, 199, 0.4) 0%, rgba(255, 77, 166, 0.18) 45%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(12px);
+  animation: rayPulse 3.5s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes rayPulse {
+  0% { transform: scale(0.92); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Modern Glassmorphic Floating Pod */
+.surprise-icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.surprise-item:hover .surprise-icon-wrapper {
+  transform: scale(1.08) translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 36px rgba(255, 13, 195, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Sleek Modern Vector Icons */
+.modern-svg-icon {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.surprise-item:hover .modern-svg-icon {
+  transform: scale(1.1);
+}
+
+.surprise-item-title {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  color: #fbf7ee;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.surprise-item:hover .surprise-item-title {
+  color: #ffd166;
+  text-shadow: 0 0 15px rgba(255, 209, 102, 0.8);
+}
+
+/* ========================================================= */
+/* MENU ICON CLICK TRANSITION & CINEMATIC PAGE ENTRY         */
+/* ========================================================= */
+.choose-title.title-fading {
+  opacity: 0.35;
+  transform: translateY(-8px);
+  filter: blur(2px);
+  transition: all 0.38s ease;
+}
+
+.surprise-grid.is-transitioning {
+  pointer-events: none;
+}
+
+/* Selected icon pops, glows radiantly, and bounces */
+.surprise-item.selected-pulse {
+  transform: scale(1.2) translateY(-10px) !important;
+  z-index: 35 !important;
+  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.surprise-item.selected-pulse .surprise-icon-wrapper {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 215, 0, 0.28) 100%) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.85), 0 0 65px rgba(255, 13, 195, 0.65), inset 0 0 15px rgba(255, 255, 255, 0.8) !important;
+  animation: iconSelectBounce 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes iconSelectBounce {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.28) rotate(-4deg); }
+  70% { transform: scale(1.14) rotate(3deg); }
+  100% { transform: scale(1.22) rotate(0deg); }
+}
+
+.surprise-item.selected-pulse .surprise-item-title {
+  color: #ffd700 !important;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.95), 0 0 40px rgba(255, 13, 195, 0.8) !important;
+  transform: scale(1.08);
+}
+
+/* Other non-selected icons smoothly fade and blur away */
+.surprise-item.dimmed-out {
+  opacity: 0.16 !important;
+  transform: scale(0.86) !important;
+  filter: blur(4px) grayscale(30%) !important;
+  pointer-events: none !important;
+  transition: all 0.36s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Shockwave ring blast expanding outwards from clicked icon */
+.transition-blast-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 215, 0, 0.95);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.85), inset 0 0 15px rgba(255, 13, 195, 0.55);
+  animation: blastRingShoot 0.45s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes blastRingShoot {
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+    border-width: 4px;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+    border-width: 1px;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+/* Global Animated Page Transition Wrapper (Hardware Accelerated, Smooth 60FPS) */
+.page-transition-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: pageEnterCinematic 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+}
+
+@keyframes pageEnterCinematic {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.app-container.force-landscape .page-transition-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gift-screen .gift-unopened-stage {
+  animation: giftStagePopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes giftStagePopIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.92, 0.92, 1) translate3d(0, -15px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+}
+
+/* ========================================================= */
+/* PAGE 3: JOURNEY (8-POLAROID WALL COLLAGE & STICKERS)      */
+/* ========================================================= */
+.journey-screen {
+  padding: 30px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-wall-wrapper {
+  position: relative;
+  width: min(96vw, 920px);
+  height: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .journey-wall-wrapper {
+    transform: scale(0.85);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 720px) {
+  .journey-wall-wrapper {
+    transform: scale(0.68);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-wall-wrapper {
+    transform: scale(0.55);
+    transform-origin: center center;
+  }
+}
+
+.polaroid-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.polaroid-row.top-row {
+  z-index: 2;
+  margin-bottom: -15px;
+}
+
+.polaroid-row.bottom-row {
+  z-index: 4;
+}
+
+/* Hanging Twine Rope SVG */
+.hanging-ropes-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Wooden Clothespin / Jepitan Kayu on each Polaroid */
+.clothespin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 28px;
+  background: linear-gradient(to right, #e6b88a, #cca072, #996e47);
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+  z-index: 25;
+}
+
+.clothespin::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -2px;
+  width: 16px;
+  height: 4px;
+  background: #555555;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Individual Polaroid Card */
+.wall-polaroid {
+  background: #ffffff;
+  padding: 8px 8px 24px 8px;
+  border-radius: 4px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  margin: 0 -10px;
+}
+
+.wall-polaroid:hover {
+  transform: scale(1.15) rotate(0deg) !important;
+  z-index: 30 !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.75);
+}
+
+.wall-photo-img {
+  width: 135px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* Top Row Rotations */
+.wall-polaroid.p1 {
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+.wall-polaroid.p2 {
+  transform: rotate(-6deg);
+  z-index: 4;
+  margin-top: 8px;
+}
+
+.wall-polaroid.p3 {
+  transform: rotate(2deg);
+  z-index: 3;
+}
+
+.wall-polaroid.p4 {
+  transform: rotate(-10deg);
+  z-index: 5;
+  margin-top: -6px;
+}
+
+/* Bottom Row Rotations */
+.wall-polaroid.p5 {
+  transform: rotate(-14deg);
+  z-index: 6;
+  margin-top: -8px;
+}
+
+.wall-polaroid.p6 {
+  transform: rotate(1deg);
+  z-index: 7;
+}
+
+.wall-polaroid.p7 {
+  transform: rotate(4deg);
+  z-index: 6;
+  margin-top: -10px;
+}
+
+.wall-polaroid.p8 {
+  transform: rotate(9deg);
+  z-index: 5;
+  margin-top: 4px;
+}
+
+/* ========================================================= */
+/* STICKERS STYLING                                          */
+/* ========================================================= */
+
+/* 1. Red Gummy / Jelly Heart (Center-Right overlay) */
+.sticker-red-gummy-heart {
+  position: absolute;
+  top: 36%;
+  left: 52%;
+  z-index: 15;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+  animation: gentlePulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes gentlePulse {
+  0% { transform: rotate(-6deg) scale(1); }
+  100% { transform: rotate(-4deg) scale(1.06); }
+}
+
+/* 2. Saturn Planet Gold (Bottom Left) */
+.sticker-saturn-gold {
+  position: absolute;
+  bottom: 12%;
+  left: 6%;
+  z-index: 12;
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+  animation: floatOrbit 4s ease-in-out infinite alternate;
+}
+
+/* 3. Blue Dolphin / Whale (Swimming on right) */
+.sticker-blue-dolphin {
+  position: absolute;
+  top: 35%;
+  right: 18%;
+  z-index: 14;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+  animation: dolphinFloat 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes dolphinFloat {
+  0% { transform: rotate(-8deg) translateY(0); }
+  100% { transform: rotate(-5deg) translateY(-8px); }
+}
+
+/* 4. Purple Planet with Ring (Bottom Right) */
+.sticker-purple-planet {
+  position: absolute;
+  bottom: 14%;
+  right: 17%;
+  z-index: 12;
+  transform: rotate(14deg);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+  animation: floatOrbit 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrbit {
+  0% { transform: translateY(0) rotate(-15deg); }
+  100% { transform: translateY(-7px) rotate(-10deg); }
+}
+
+/* 5. Soft Blurred Big Pink Heart (Far Left) */
+.sticker-soft-pink-heart {
+  position: absolute;
+  top: 24%;
+  left: 4%;
+  z-index: 1;
+  pointer-events: none;
+  animation: gentlePulse 4s ease-in-out infinite alternate;
+}
+
+/* 6. Triple Pink Hearts Cluster (Upper Left) */
+.sticker-pink-hearts-cluster {
+  position: absolute;
+  top: 30%;
+  left: 23%;
+  z-index: 12;
+  display: flex;
+  gap: 2px;
+  font-size: 26px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.heart-emoji.h1 {
+  animation: gentleFloat 2.5s ease-in-out infinite alternate;
+}
+
+.heart-emoji.h2 {
+  animation: gentleFloat 3.2s ease-in-out infinite alternate-reverse;
+}
+
+/* 7. Double Red/Pink Hearts (Bottom Center) */
+.sticker-bottom-hearts {
+  position: absolute;
+  bottom: 12%;
+  left: 35%;
+  z-index: 12;
+  display: flex;
+  gap: 4px;
+  font-size: 28px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+  transform: rotate(6deg);
+  pointer-events: none;
+}
+
+.heart-emoji.bh1 {
+  animation: gentleFloat 3s ease-in-out infinite alternate;
+}
+
+.heart-emoji.bh2 {
+  animation: gentleFloat 3.8s ease-in-out infinite alternate-reverse;
+}
+
+/* ========================================================= */
+/* PAGE 4: MOMENT (REALISTIC ASSETS & PERFECT SPACING)       */
+/* ========================================================= */
+.moment-screen {
+  padding: 30px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.moment-canvas-wrapper {
+  position: relative;
+  width: min(96vw, 1050px);
+  min-height: 580px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .moment-canvas-wrapper {
+    transform: scale(0.85);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 720px) {
+  .moment-canvas-wrapper {
+    transform: scale(0.68);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .moment-canvas-wrapper {
+    transform: scale(0.55);
+    transform-origin: center center;
+  }
+}
+
+/* ========================================= */
+/* LEFT SIDE: NAME, LETTER, ROSES, VINYL     */
+/* ========================================= */
+.moment-letter-group {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Cursive Name Title (Compact with Centered Mulyono & Queen Crown) */
+.moment-name-title-container {
+  width: 100%;
+  max-width: 490px;
+  transform: rotate(-3deg);
+  margin-bottom: 6px;
+  padding-left: 20px;
+  will-change: transform, opacity;
+  animation: momentTitleEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes momentTitleEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -25px, 0) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+}
+
+.moment-name-title {
+  font-family: var(--font-cursive);
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.name-part-first {
+  font-size: clamp(2.5rem, 4.4vw, 3.5rem);
+  letter-spacing: 0.5px;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.name-part-centered {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2px;
+  text-align: center;
+}
+
+.queen-crown-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  animation: crownGlow 2.5s ease-in-out infinite alternate;
+  vertical-align: middle;
+}
+
+@keyframes crownGlow {
+  0% { transform: scale(1) rotate(-6deg); filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.7)); }
+  100% { transform: scale(1.12) rotate(6deg); filter: drop-shadow(0 0 14px rgba(255, 215, 0, 1)); }
+}
+
+.letter-wrapper-relative {
+  position: relative;
+  width: 490px;
+}
+
+/* 3-Roses Cluster (Matching user screenshot: sits on top-left of letter card) */
+.roses-left-bouquet-img-wrapper {
+  position: absolute;
+  left: -65px;
+  top: -15px;
+  width: 180px;
+  z-index: 5;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.65));
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: rosesBouquetBloomSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 4s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes rosesBouquetBloomSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-25px, 15px, 0) scale3d(0.3, 0.3, 1) rotate(-25deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translate3d(2px, -2px, 0) scale3d(1.06, 1.06, 1) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+.roses-bouquet-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Crumpled White Paper Letter Card (Realistic paper creases & ample padding) */
+.crumpled-paper-letter {
+  background: #faf8f4;
+  border-radius: 4px;
+  padding: 34px 34px 50px 115px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 4px 14px rgba(0, 0, 0, 0.25),
+    inset 0 0 35px rgba(180, 160, 140, 0.12);
+  border: 1px solid rgba(220, 210, 195, 0.85);
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  min-height: 310px;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: letterUnfoldEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes letterUnfoldEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 20px, 0) rotate(-8deg) scale3d(0.88, 0.88, 1);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(2px, -2px, 0) rotate(-1deg) scale3d(1.02, 1.02, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-2.5deg) scale3d(1, 1, 1);
+  }
+}
+
+/* Realistic Crumpled Paper Texture & Wrinkle Overlay */
+.paper-wrinkle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('/images/crumpled_paper_texture.jpg');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.crumpled-letter-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.68;
+  color: #1a1a1a;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Romantic Signature right under greeting letter */
+.crumpled-letter-signature {
+  font-family: var(--font-cursive);
+  font-size: 1.75rem;
+  color: #800020;
+  text-align: right;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle Romantic Footer Credit at bottom of page */
+.moment-bottom-footer-name {
+  margin-top: 35px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Interactive Vinyl Player Disc (BEHIND PAPER: z-index 2) */
+.moment-vinyl-disc-container {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 175px;
+  height: 175px;
+  transform: translateX(-50%) rotate(-2.5deg);
+  z-index: 2; /* BEHIND paper (z-index: 3) */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.moment-vinyl-disc-container:hover {
+  transform: translateX(-50%) rotate(-2.5deg) scale(1.04);
+}
+
+.moment-vinyl-disc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #240712 18%, #111111 26%, #1c1c1c 55%, #050505 100%);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.75), 0 0 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.moment-vinyl-disc.spinning {
+  animation: rotateVinyl 4s linear infinite;
+}
+
+.vinyl-groove {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vinyl-groove.g1 { width: 145px; height: 145px; }
+.vinyl-groove.g2 { width: 115px; height: 115px; }
+.vinyl-groove.g3 { width: 85px; height: 85px; }
+
+/* Surface controls on the visible peeking bottom half (Like User Image 2) */
+.vinyl-surface-controls {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinyl-track-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vinyl-icon-btn {
+  cursor: pointer;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  transition: all 0.2s ease;
+}
+
+.vinyl-icon-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Center Red circular button */
+.vinyl-center-red-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff2a4d 0%, #d90429 60%, #800016 100%);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(217, 4, 41, 0.65), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0;
+}
+
+.vinyl-center-red-btn:hover {
+  transform: scale(1.08);
+}
+
+.vinyl-play-circle {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.vinyl-bottom-text {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  margin-top: 4px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+/* ========================================= */
+/* RIGHT SIDE: CLASSIC ELEGANT GOLD FRAME    */
+/* ========================================= */
+.moment-right-cluster {
+  position: relative;
+  margin-left: -28px;
+  margin-top: -12px;
+  z-index: 5;
+}
+
+/* Classic Elegant Gold Frame Container */
+.moment-baroque-frame-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  filter: drop-shadow(0 22px 48px rgba(0, 0, 0, 0.75));
+  transition: transform 0.3s ease;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: baroqueFrameSmoothEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes baroqueFrameSmoothEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(24px, -18px, 0) rotate(12deg) scale3d(0.9, 0.9, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(7deg) scale3d(1, 1, 1);
+  }
+}
+
+.moment-baroque-frame-container:hover {
+  transform: rotate(5deg) scale(1.02);
+}
+
+/* Partner's Photo inside the classic gold frame opening */
+.frame-photo-inset {
+  position: absolute;
+  top: 17.5%;
+  left: 21.5%;
+  width: 57%;
+  height: 65%;
+  overflow: hidden;
+  background: #190312;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(212, 175, 55, 0.45);
+}
+
+.moment-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Frame Graphic Overlay */
+.baroque-frame-overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 2;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Exquisite Red Rose on Top-Right Corner of Frame (Matching User Screenshot) */
+.frame-corner-single-rose {
+  position: absolute;
+  top: -32px;
+  right: -34px;
+  width: 130px;
+  height: 130px;
+  z-index: 12;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.65));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: cornerRoseBloomSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 3.5s ease-in-out 0.7s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes cornerRoseBloomSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(12px, -12px, 0) scale3d(0.7, 0.7, 1) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+.corner-rose-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Vintage Leica 35mm Camera (Bottom Left of Frame) */
+.moment-vintage-camera {
+  position: absolute;
+  bottom: -24px;
+  left: -44px;
+  width: 160px;
+  z-index: 15;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.7));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: vintageCameraSmoothEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, gentleFloat 4.2s ease-in-out 0.7s infinite alternate-reverse;
+}
+
+@keyframes vintageCameraSmoothEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-18px, 18px, 0) rotate(-10deg) scale3d(0.85, 0.85, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-4deg) scale3d(1, 1, 1);
+  }
+}
+
+.vintage-camera-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================================================= */
+/* PAGE 5: PLAYLIST (ULTRA-COMPACT & LANDSCAPE ROTATION)    */
+/* ========================================================= */
+.playlist-screen {
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden; /* Guaranteed NO scrollbar on iPhone 14 Pro Max */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Floating Landscape Rotation Switcher Button */
+.playlist-rotate-toggle-btn {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 120;
+  background: rgba(30, 5, 25, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 13, 195, 0.4);
+  color: #ffd8f5;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 13, 195, 0.3);
+  transition: all 0.25s ease;
+}
+
+.playlist-rotate-toggle-btn:hover {
+  background: rgba(60, 10, 50, 0.95);
+  border-color: #ff0dc3;
+  transform: scale(1.05);
+}
+
+/* Master Compact Canvas Container */
+.playlist-showcase-container {
+  display: flex;
+  flex-direction: column;
+  width: 770px;
+  position: relative;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: playlistShowcaseEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes playlistShowcaseEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale3d(0.96, 0.96, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+.playlist-canvas-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.playlist-canvas-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Desktop & Tablet Scale */
+@media (min-width: 900px) {
+  .playlist-showcase-container {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 899px) and (min-width: 651px) {
+  .playlist-showcase-container {
+    transform: scale(0.85);
+  }
+}
+
+/* Mobile Portrait Standard Mode (if user toggles off landscape) */
+@media (max-width: 650px) and (orientation: portrait) {
+  .app-container.standard-portrait .playlist-showcase-container {
+    transform: scale(0.48);
+  }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+  .app-container.standard-portrait .playlist-showcase-container {
+    transform: scale(0.42);
+  }
+}
+
+/* Left Column: YouTube (16:9) + Retro Boombox & TV */
+.playlist-left-column {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.playlist-youtube-wrapper {
+  width: 440px;
+  height: 248px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.75), 0 0 18px rgba(255, 13, 195, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+.playlist-youtube-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.playlist-retro-left-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.retro-boombox-item,
+.retro-tv-item {
+  transition: transform 0.25s ease;
+}
+
+.retro-boombox-item:hover,
+.retro-tv-item:hover {
+  transform: scale(1.06) translateY(-2px);
+}
+
+/* Right Column: 3 Gold Frames + Glowing Neon Wave Staff */
+.playlist-right-column {
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.playlist-frames-composition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Sub-column with 2 stacked square frames */
+.frames-stacked-subcol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playlist-frame-card {
+  position: relative;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.65));
+  transition: transform 0.25s ease;
+}
+
+.playlist-frame-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.playlist-frame-card.frame-square {
+  width: 120px;
+  height: 120px;
+}
+
+.frames-large-subcol {
+  position: relative;
+}
+
+.playlist-frame-card.large-right-frame {
+  width: 155px;
+  height: 195px;
+}
+
+/* Photo Insets with gold glowing border */
+.playlist-frame-photo-inset {
+  position: absolute;
+  overflow: hidden;
+  background: #190312;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.75), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
+}
+
+.playlist-frame-photo-inset.square-inset {
+  top: 17%;
+  left: 21%;
+  width: 58%;
+  height: 66%;
+}
+
+.playlist-frame-photo-inset.baroque-inset {
+  top: 24%;
+  left: 27%;
+  width: 46%;
+  height: 52%;
+}
+
+.playlist-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.playlist-gold-frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 2;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Pink Chat Bubble Sticker (As seen in screenshot) */
+.playlist-pink-chat-sticker {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+  animation: gentleFloat 3s ease-in-out infinite alternate;
+}
+
+/* Under Frames: Neon Staff & Kado Virtual Badge */
+.playlist-music-staff-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.neon-music-staff-container {
+  flex: 1;
+  animation: neonPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { filter: drop-shadow(0 0 5px #00f0ff); opacity: 0.85; }
+  100% { filter: drop-shadow(0 0 14px #00f0ff) drop-shadow(0 0 22px #0088ff); opacity: 1; }
+}
+
+/* Round Photo Icon Badge with '+' dot */
+.photo-icon-badge-wrapper,
+.kado-virtual-badge-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.photo-icon-badge,
+.kado-virtual-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #7a0035 0%, #4a0020 60%, #20000e 100%);
+  border: 1.5px solid #ffd700;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(6deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photo-icon-badge:hover,
+.kado-virtual-badge:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 8px 22px rgba(255, 215, 0, 0.5);
+}
+
+.badge-text-line1 {
+  font-family: var(--font-cursive);
+  font-size: 1.05rem;
+  color: #ffd700;
+  line-height: 1;
+}
+
+.badge-text-line2 {
+  font-family: var(--font-cursive);
+  font-size: 0.82rem;
+  color: #ffffff;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.badge-plus-dot {
+  position: absolute;
+  bottom: -3px;
+  right: -2px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #ff0055;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid #fff;
+}
+
+/* Floating Bottom-Right Soft White Heart (From reference screenshot) */
+.playlist-bottom-heart {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 10;
+  pointer-events: none;
+  animation: gentlePulse 3s ease-in-out infinite alternate;
+}
+
+/* Global Footer on All Pages (Always in center at very bottom) */
+.global-footer-credit {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+}
+
+/* ========================================================= */
+/* PAGE 6: GIFT SURPRISE MODAL / REVEAL                      */
+/* ========================================================= */
+.gift-reveal-box {
+  background: rgba(30, 4, 25, 0.92);
+  border: 2px solid rgba(255, 215, 64, 0.6);
+  backdrop-filter: blur(16px);
+  padding: clamp(24px, 5vw, 45px);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 204, 0, 0.35);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.gift-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: #111111;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.gift-title {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.gift-voucher-card {
+  background: #ffffff;
+  color: #222222;
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px dashed #b8860b;
+  margin-bottom: 24px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.voucher-code-badge {
+  background: #f3f3f3;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d8009c;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.voucher-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #444444;
+}
+
+.gift-claim-btn {
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.gift-claim-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.65);
+}
+
+/* ========================================================= */
+/* MODAL OVERLAY (FOR QR CODE & LIGHTBOX)                    */
+/* ========================================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 2, 10, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: #1c051a;
+  border: 2px solid rgba(255, 13, 195, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 35px rgba(255, 13, 195, 0.4);
+  text-align: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-mockup {
+  background: #0b141a;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 18px 0;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.whatsapp-bubble {
+  background: #005c4b;
+  color: #e9edef;
+  padding: 10px 14px;
+  border-radius: 8px 8px 8px 0;
+  font-size: 0.95rem;
+  max-width: 90%;
+  margin-bottom: 12px;
+}
+
+.heart-qr-frame {
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lightbox Image Preview */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+/* ========================================================= */
+/* TIKTOK VIRAL WHATSAPP SURPRISE CARD & 3D GIFT UNBOXING    */
+/* ========================================================= */
+
+.gift-screen {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------- */
+/* 1. UNOPENED 3D GIFT STAGE & INTERACTIVE ANIMATIONS        */
+/* --------------------------------------------------------- */
+.gift-unopened-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gift-stage-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.gift-main-headline {
+  margin-bottom: 8px !important;
+  font-size: clamp(2.4rem, 6vw, 3.8rem) !important;
+  text-shadow: 0 0 25px rgba(255, 13, 195, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.gift-hint-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: #ffe0f5;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Gift Box Wrapper */
+.gift-box-3d-wrapper {
+  position: relative;
+  width: 240px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: giftIdleFloat 3.8s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-box-3d-wrapper:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+@keyframes giftIdleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.2deg);
+  }
+}
+
+/* Ambient Glow behind the box */
+.gift-ambient-aura {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 13, 195, 0.4) 0%, rgba(255, 215, 64, 0.25) 40%, transparent 70%);
+  filter: blur(18px);
+  z-index: 1;
+  animation: auraPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes auraPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0.95; }
+}
+
+/* Explosive Light Rays upon Unboxing */
+.gift-magical-light-burst {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #ffd700 30%, #ff0dc3 60%, transparent 75%);
+  filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gift-box-3d-wrapper.is-opening .gift-magical-light-burst {
+  animation: burstRaysExplode 0.85s ease-out 0.35s forwards;
+}
+
+@keyframes burstRaysExplode {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(3.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(5);
+  }
+}
+
+/* Orbiting Sparkles */
+.floating-sparkle {
+  position: absolute;
+  font-size: 22px;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+  animation: sparkleOrbit 4s ease-in-out infinite alternate;
+}
+
+.floating-sparkle.sp1 { top: 10%; left: 8%; animation-delay: 0s; }
+.floating-sparkle.sp2 { top: 15%; right: 10%; animation-delay: 0.8s; font-size: 18px; }
+.floating-sparkle.sp3 { bottom: 25%; left: 4%; animation-delay: 1.6s; font-size: 20px; }
+.floating-sparkle.sp4 { bottom: 20%; right: 6%; animation-delay: 2.4s; }
+
+@keyframes sparkleOrbit {
+  0% { transform: translateY(0) scale(0.85); opacity: 0.6; }
+  50% { transform: translateY(-10px) scale(1.15); opacity: 1; }
+  100% { transform: translateY(5px) scale(0.9); opacity: 0.7; }
+}
+
+/* 3D Gift Box Object */
+.gift-box-3d-object {
+  position: relative;
+  z-index: 5;
+  width: 175px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* When Opening: Shake excitation */
+.gift-box-3d-wrapper.is-opening .gift-box-3d-object {
+  animation: unboxingJitter 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes unboxingJitter {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  15% { transform: translate(-8px, -4px) rotate(-4deg) scale(1.06); }
+  30% { transform: translate(8px, 3px) rotate(4deg) scale(1.08); }
+  45% { transform: translate(-10px, 2px) rotate(-5deg) scale(1.1); }
+  60% { transform: translate(10px, -3px) rotate(5deg) scale(1.12); }
+  75% { transform: translate(-6px, 1px) rotate(-3deg) scale(1.14); }
+  90% { transform: translate(6px, -1px) rotate(3deg) scale(1.15); }
+}
+
+/* LID SECTION (Flies upward) */
+.gift-lid-assembly {
+  position: relative;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.gift-box-3d-wrapper.is-opening .gift-lid-assembly {
+  animation: lidBlastOff 0.65s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.35s forwards;
+}
+
+@keyframes lidBlastOff {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-90px) rotate(-18deg) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-220px) rotate(-45deg) scale(0.65);
+    opacity: 0;
+  }
+}
+
+.gift-bow-assembly {
+  position: relative;
+  z-index: 3;
+  margin-bottom: -18px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.gift-lid-cap {
+  width: 185px;
+  height: 42px;
+  background: linear-gradient(180deg, #ff4d88 0%, #db005b 60%, #99003d 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.45);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.gift-lid-ribbon {
+  width: 34px;
+  height: 100%;
+  background: linear-gradient(90deg, #ffd166 0%, #fff7d6 50%, #f59e0b 100%);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* BODY SECTION */
+.gift-body-assembly {
+  width: 168px;
+  height: 130px;
+  background: linear-gradient(180deg, #ff2a6d 0%, #c2004d 55%, #7a0030 100%);
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  margin-top: -6px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.55), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.gift-body-ribbon-vertical {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 100%;
+  background: linear-gradient(90deg, #ffd166 0%, #fff7d6 50%, #f59e0b 100%);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.35);
+}
+
+.gift-body-ribbon-horizontal {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: linear-gradient(180deg, #ffd166 0%, #fff7d6 50%, #f59e0b 100%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.gift-body-specular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* Ground Shadow beneath the box */
+.gift-ground-shadow {
+  width: 150px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55) 0%, transparent 70%);
+  margin-top: -12px;
+  filter: blur(4px);
+  animation: shadowScale 3.8s ease-in-out infinite;
+}
+
+@keyframes shadowScale {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(0.85); opacity: 0.35; }
+}
+
+/* Tap to Open Pointer Indicator */
+.gift-tap-indicator {
+  position: absolute;
+  bottom: -32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 5px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: indicatorBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes indicatorBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.tap-hand {
+  font-size: 16px;
+  animation: fingerTap 1.2s ease-in-out infinite;
+}
+
+@keyframes fingerTap {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25) rotate(-10deg); }
+}
+
+.tap-label {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #fff;
+}
+
+/* --------------------------------------------------------- */
+/* 2. REVEALED WHATSAPP SURPRISE CARD (Staggered Animation)   */
+/* --------------------------------------------------------- */
+.whatsapp-gift-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  animation: waSpringReveal 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  z-index: 10;
+}
+
+@keyframes waSpringReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.35) translateY(50px);
+    filter: blur(10px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-6px);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.whatsapp-phone-card {
+  background: #0b141a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 13, 195, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1. WhatsApp Top App Bar */
+.wa-top-bar {
+  background: #202c33;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  animation: waSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes waSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wa-top-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.wa-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.wa-avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid #25d366;
+  flex-shrink: 0;
+}
+
+.wa-avatar-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wa-contact-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-contact-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e9edef;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wa-contact-status {
+  font-size: 0.72rem;
+  color: #25d366;
+  font-weight: 500;
+}
+
+.wa-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #aebac1;
+}
+
+/* 2. WhatsApp Chat Canvas */
+.wa-chat-canvas {
+  padding: 14px 14px 16px 14px;
+  background-color: #0b141a;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(32, 44, 51, 0.3) 10%, transparent 11%),
+    radial-gradient(circle at 10% 20%, rgba(255, 13, 195, 0.06) 0%, transparent 40%);
+  background-size: 24px 24px, 100% 100%;
+  max-height: 72vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-chat-canvas::-webkit-scrollbar {
+  width: 5px;
+}
+
+.wa-chat-canvas::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+.wa-chat-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.wa-date-pill {
+  background: #182229;
+  color: #8696a0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin: 0 auto 12px auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  animation: waPopIn 0.4s ease 0.2s both;
+}
+
+@keyframes waPopIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Teddy Bear Sticker holding Flowers */
+.wa-bear-sticker-wrapper {
+  margin: 0 auto 8px auto;
+  text-align: center;
+  animation: waBearDropIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both, waBearBounce 3.2s ease-in-out 1s infinite;
+}
+
+@keyframes waBearDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.6);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(6px) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes waBearBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.wa-bear-sticker-img {
+  width: 135px;
+  height: 135px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.65));
+}
+
+/* WhatsApp Message Bubble */
+.wa-message-bubble {
+  background: #1f2c34;
+  border-radius: 12px 12px 12px 2px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin-bottom: 14px;
+  animation: waBubbleSpringPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both;
+}
+
+@keyframes waBubbleSpringPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wa-bubble-intro {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #25d366;
+  margin-bottom: 8px;
+}
+
+/* Viral Heart Text Art from TikTok Video */
+.wa-heart-text-art {
+  background: rgba(255, 13, 195, 0.08);
+  border: 1.5px dashed rgba(255, 13, 195, 0.45);
+  border-radius: 12px;
+  padding: 12px 8px;
+  margin: 8px 0 12px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(255, 13, 195, 0.15), 0 0 12px rgba(255, 13, 195, 0.2);
+  animation: waHeartNeonPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes waHeartNeonPulse {
+  0% {
+    border-color: rgba(255, 13, 195, 0.35);
+    box-shadow: inset 0 0 12px rgba(255, 13, 195, 0.1), 0 0 8px rgba(255, 13, 195, 0.15);
+  }
+  100% {
+    border-color: rgba(255, 13, 195, 0.7);
+    box-shadow: inset 0 0 20px rgba(255, 13, 195, 0.25), 0 0 18px rgba(255, 13, 195, 0.4);
+  }
+}
+
+.heart-ascii-text {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff33aa;
+  text-shadow: 0 0 10px rgba(255, 51, 170, 0.7), 0 0 20px rgba(255, 51, 170, 0.4);
+  line-height: 1.35;
+  white-space: pre-wrap;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Embedded Voucher Box inside bubble */
+.wa-embedded-voucher {
+  background: #111b21;
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: waVoucherSlideUp 0.55s ease 0.65s both;
+}
+
+@keyframes waVoucherSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.voucher-ribbon-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ff9900);
+  color: #111;
+  font-weight: 800;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.35);
+}
+
+.voucher-head-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 6px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.voucher-pill-code {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(255, 13, 195, 0.2);
+  color: #ff66cc;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px dashed #ff0dc3;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(255, 13, 195, 0.25);
+}
+
+.voucher-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.voucher-perks-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #d1d7db;
+  line-height: 1.35;
+}
+
+.perk-check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.voucher-footer-note {
+  font-size: 0.72rem;
+  color: #8696a0;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.wa-message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #8696a0;
+}
+
+.wa-blue-ticks {
+  color: #53bdeb;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+/* Direct WhatsApp Claim Button */
+.wa-claim-direct-btn {
+  background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
+  color: #111b21;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  animation: waBtnBounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both, waBtnPulsing 2.4s ease-in-out infinite 1.4s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@keyframes waBtnBounceIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes waBtnPulsing {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.75), 0 6px 20px rgba(37, 211, 102, 0.5);
+    transform: scale(1.025);
+  }
+}
+
+.wa-claim-direct-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.7);
+}
+
+.wa-reset-box-btn {
+  background: transparent;
+  border: none;
+  color: #8696a0;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  animation: waPopIn 0.5s ease 1s both;
+  transition: color 0.2s;
+}
+
+.wa-reset-box-btn:hover {
+  color: #ffd8f5;
+}
+
+/* ========================================================= */
+/* COUPLE HERO SCREEN & 4 ANIMATED GIFT CATEGORIES           */
+/* Reference: User Image with Date, Title, 4 Icons & Click here */
+/* ========================================================= */
+.gift-couple-hero-container {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: coupleCardZoomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes coupleCardZoomIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 35px, 0) scale3d(0.85, 0.85, 1);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(0, -3px, 0) scale3d(1.02, 1.02, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+.gift-couple-hero-card {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 13, 195, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  aspect-ratio: 16 / 10;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 20px 14px 20px;
+  background: #14040e;
+}
+
+/* Background Couple Photo with Warm Cinematic Vignette */
+.gift-couple-photo-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gift-couple-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gift-couple-hero-card:hover .gift-couple-img {
+  transform: scale(1.07);
+}
+
+.gift-couple-warm-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(80, 10, 30, 0.42) 0%,
+    rgba(30, 4, 18, 0.52) 40%,
+    rgba(15, 2, 10, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+.gift-couple-vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 65px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+}
+
+/* Top Date Header (matching "04/24/26" in reference) */
+.gift-couple-date-header {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.gift-couple-date-text {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: rgba(255, 245, 235, 0.95);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  display: inline-block;
+  animation: dateGlowFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes dateGlowFloat {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    transform: translateY(-3px);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 215, 0, 0.7);
+  }
+}
+
+/* Center Romantic Headlines */
+.gift-couple-content-overlay {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto 0;
+  gap: 4px;
+}
+
+.gift-couple-headline-main {
+  font-family: 'Alex Brush', 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(255, 13, 195, 0.75), 0 3px 12px rgba(0, 0, 0, 0.95);
+  margin: 0;
+  line-height: 1.1;
+  animation: titleLovePulse 3.5s ease-in-out infinite;
+}
+
+@keyframes titleLovePulse {
+  0%, 100% {
+    text-shadow: 0 0 25px rgba(255, 13, 195, 0.7), 0 3px 12px rgba(0, 0, 0, 0.95);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(255, 13, 195, 0.95), 0 0 15px rgba(255, 215, 0, 0.6), 0 3px 15px rgba(0, 0, 0, 0.95);
+    transform: scale(1.02);
+  }
+}
+
+.gift-couple-headline-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(0.76rem, 1.8vw, 0.92rem);
+  color: rgba(255, 235, 245, 0.95);
+  font-style: italic;
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  margin-bottom: 8px;
+}
+
+/* 4 Interactive Gift Categories with Animations */
+.gift-categories-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 18px);
+  width: 100%;
+  margin: 4px 0 8px 0;
+}
+
+.gift-category-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  min-width: 62px;
+  position: relative;
+  animation: catEntryFade 0.6s ease both, iconFloat 3.4s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes catEntryFade {
+  from { opacity: 0; transform: translateY(16px) scale(0.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.gift-category-btn:nth-child(1) { animation-delay: 0.1s, 0s; }
+.gift-category-btn:nth-child(2) { animation-delay: 0.22s, 0.4s; }
+.gift-category-btn:nth-child(3) { animation-delay: 0.34s, 0.8s; }
+.gift-category-btn:nth-child(4) { animation-delay: 0.46s, 1.2s; }
+
+.gift-category-btn:hover {
+  transform: translateY(-7px) scale(1.09);
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 10px 24px rgba(255, 13, 195, 0.45), 0 0 18px rgba(255, 215, 0, 0.6);
+}
+
+.gift-category-btn.clicked {
+  animation: clickPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes clickPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.88); }
+  100% { transform: scale(1.1); }
+}
+
+.gift-cat-icon-pod {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.25);
+}
+
+.cat-svg-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease;
+}
+
+.gift-category-btn:hover .cat-svg-icon {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.cat-ripple-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 215, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gift-category-btn:hover .cat-ripple-ring {
+  animation: ringPulse 1.5s ease-out infinite;
+}
+
+@keyframes ringPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.gift-cat-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Click Here Interactive Trigger (matching reference image) */
+.gift-click-here-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: clamp(0.84rem, 2vw, 1.02rem);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 215, 0, 0.75);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+  animation: clickHerePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes clickHerePulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 0 6px rgba(255, 215, 0, 0.35);
+  }
+  50% {
+    transform: scale(1.06);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 215, 0, 0.85);
+    color: #fff3bf;
+  }
+}
+
+.gift-click-here-btn:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+  text-decoration-color: #ffd700;
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.95);
+}
+
+.click-here-sparkle {
+  font-size: 0.9rem;
+  display: inline-block;
+  animation: sparkleTwinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  50% { transform: scale(1.3) rotate(20deg); opacity: 1; }
+}
+
+/* Replay unboxing button */
+.gift-card-replay-btn {
+  position: relative;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffd8f5;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  padding: 3px 12px;
+  margin: 4px auto 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.gift-card-replay-btn:hover {
+  background: rgba(255, 13, 195, 0.3);
+  color: #ffffff;
+  border-color: rgba(255, 13, 195, 0.6);
+}
+
+/* ========================================================= */
+/* GIFT DETAIL MODAL (ANIMATED POPUP WHEN ICON IS CLICKED)   */
+/* ========================================================= */
+.gift-category-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gift-category-modal-card {
+  background: linear-gradient(160deg, #2b0222 0%, #170412 60%, #0d010b 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.55);
+  border-radius: 22px;
+  max-width: 360px;
+  width: 100%;
+  padding: 24px 20px 20px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 13, 195, 0.45);
+  animation: modalZoomPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalZoomPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 13, 195, 0.5);
+  transform: rotate(90deg);
+}
+
+.modal-icon-pod-center {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 28px rgba(255, 215, 0, 0.45), inset 0 0 15px rgba(255, 13, 195, 0.3);
+  animation: modalPodFloat 3s ease-in-out infinite;
+}
+
+@keyframes modalPodFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.modal-icon-pod-center .cat-svg-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.modal-gift-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd700, #ff9900);
+  color: #111;
+  font-weight: 800;
+  font-size: 0.66rem;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.modal-gift-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+}
+
+.modal-gift-desc {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: #fbf7ee;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.modal-gift-perk-box {
+  background: rgba(255, 13, 195, 0.14);
+  border: 1px dashed rgba(255, 13, 195, 0.45);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #ffe4f5;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal-perk-heart {
+  color: #ff3366;
+  flex-shrink: 0;
+}
+
+.modal-claim-btn {
+  background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
+  color: #111b21;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.modal-claim-btn:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.7);
+}
+
+.modal-secondary-btn {
+  background: transparent;
+  border: none;
+  color: #8696a0;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: color 0.2s;
+}
+
+.modal-secondary-btn:hover {
+  color: #ffd8f5;
+}
+
+
+/* ========================================================= */
+/* PAGE 3: MEMORY OF US / OUR MEMORIES (Aesthetic Photostrips)*/
+/* Reference: Image 3 with Photostrip & White Daisy Flowers  */
+/* ========================================================= */
+.memory-of-us-screen {
+  background: transparent !important;
+  color: var(--text-creamy) !important;
+  min-height: 100vh;
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-board-container {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* Header Box matching Image 3 */
+.memory-header-box {
+  text-align: center;
+  margin-bottom: 22px;
+  will-change: transform, opacity;
+  animation: journeyHeaderEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes journeyHeaderEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -18px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.memory-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 6px;
+  text-shadow: 0 0 24px rgba(255, 13, 195, 0.45), 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.memory-subtitle {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  color: #ffe4f5;
+  margin: 0;
+  line-height: 1.25;
+  font-style: italic;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Photostrip Composition */
+.memory-photostrips-composition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3.5vw, 38px);
+  width: 100%;
+  margin-top: 6px;
+}
+
+.photostrip-film-wrapper {
+  position: relative;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.5)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Left photostrip tilted slightly left (matching Image 3) */
+.photostrip-film-wrapper.strip-left {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: journeyStripLeftSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes journeyStripLeftSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(-30px, 20px, 0) rotate(-10deg) scale3d(0.9, 0.9, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(-3.5deg) scale3d(1, 1, 1);
+  }
+}
+
+/* Right photostrip tilted slightly right (matching Image 3) */
+.photostrip-film-wrapper.strip-right {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: journeyStripRightSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes journeyStripRightSmooth {
+  0% {
+    opacity: 0;
+    transform: translate3d(30px, 20px, 0) rotate(10deg) scale3d(0.9, 0.9, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(4deg) scale3d(1, 1, 1);
+  }
+}
+
+.photostrip-film-wrapper:hover {
+  transform: scale(1.03) rotate(0deg);
+  z-index: 20;
+}
+
+.photostrip-white-card {
+  background: #ffffff;
+  padding: 10px 10px 16px 10px;
+  border-radius: 4px;
+  width: clamp(140px, 20vw, 190px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.photostrip-slot {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #e8e8e8;
+  position: relative;
+}
+
+.photostrip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.photostrip-slot:hover .photostrip-img {
+  transform: scale(1.08);
+}
+
+/* White Daisy Flower Accents (matching Image 3) */
+.daisy-flower-accent {
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.daisy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.daisy-top-left {
+  top: -24px;
+  left: -28px;
+  width: clamp(65px, 8vw, 84px);
+  height: clamp(65px, 8vw, 84px);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: daisyBloomPop 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, daisyAmbientFloat 4s ease-in-out 0.7s infinite alternate;
+}
+
+.daisy-bottom-right {
+  bottom: -22px;
+  right: -28px;
+  width: clamp(70px, 9vw, 92px);
+  height: clamp(70px, 9vw, 92px);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: daisyBloomPop 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, daisyAmbientFloat 4.4s ease-in-out 0.7s infinite alternate-reverse;
+}
+
+.daisy-lower-left {
+  bottom: 24px;
+  left: -24px;
+  width: clamp(52px, 6.5vw, 68px);
+  height: clamp(52px, 6.5vw, 68px);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation: daisyBloomPop 0.65s cubic-bezier(0.16, 1, 0.3, 1) both, daisyAmbientFloat 3.8s ease-in-out 0.7s infinite alternate;
+}
+
+@keyframes daisyBloomPop {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.7, 0.7, 1) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+@keyframes daisyAmbientFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(4deg);
+  }
+}
+
+/* Lightbox Modal for Photostrips */
+.memory-lightbox-content {
+  background: #ffffff !important;
+  max-width: 520px;
+  border-radius: 8px;
+  padding: 12px 12px 20px 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.memory-lightbox-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memory-lightbox-img {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.memory-lightbox-caption {
+  font-family: var(--font-cursive);
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+/* Landscape Mode Adjustments for New Components */
+.app-container.force-landscape .memory-board-container {
+  transform: scale(0.66) !important;
+  transform-origin: center center;
+  margin: -10px auto 0 auto;
+}
+
+.app-container.force-landscape .gift-unopened-stage {
+  transform: scale(0.85);
+  transform-origin: center center;
+  margin: -10px auto 0 auto;
+}
+
+.app-container.force-landscape .gift-couple-hero-container {
+  transform: scale(0.85);
+  transform-origin: center center;
+  margin: 0 auto;
+}
+
+.app-container.force-landscape .gift-couple-hero-card {
+  max-height: 84vh;
+  min-height: unset;
+  aspect-ratio: 16 / 9;
+  padding: 10px 16px 8px 16px;
+}
+
+.app-container.force-landscape .gift-category-modal-card {
+  max-height: 92vh;
+  padding: 12px 18px 10px 18px;
+  max-width: 360px;
+  overflow-y: auto;
+}
+
+.app-container.force-landscape .modal-icon-pod-center {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 6px;
+}
+
+.app-container.force-landscape .modal-icon-pod-center .cat-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.app-container.force-landscape .modal-gift-tag {
+  font-size: 0.58rem;
+  padding: 2px 7px;
+  margin-bottom: 4px;
+}
+
+.app-container.force-landscape .modal-gift-title {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.app-container.force-landscape .modal-gift-desc {
+  font-size: 0.74rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.app-container.force-landscape .modal-gift-perk-box {
+  padding: 5px 8px;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+}
+
+.app-container.force-landscape .modal-claim-btn {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+}
+
+.app-container.force-landscape .modal-secondary-btn {
+  margin-top: 4px;
+  font-size: 0.72rem;
+}
+
+.app-container.force-landscape .whatsapp-phone-card {
+  max-height: 86vh;
+  transform: scale(0.85);
+  transform-origin: center center;
+  margin: 0 auto;
+}
+
+@media (orientation: landscape) and (max-height: 650px) {
+  .memory-board-container {
+    transform: scale(0.66) !important;
+    transform-origin: center center;
+    margin: -10px auto 0 auto;
+  }
+
+  .gift-unopened-stage {
+    transform: scale(0.85);
+    transform-origin: center center;
+    margin: -10px auto 0 auto;
+  }
+
+  .gift-couple-hero-container {
+    transform: scale(0.85);
+    transform-origin: center center;
+    margin: 0 auto;
+  }
+
+  .gift-couple-hero-card {
+    max-height: 84vh;
+    min-height: unset;
+    aspect-ratio: 16 / 9;
+    padding: 10px 16px 8px 16px;
+  }
+
+  .gift-category-modal-card {
+    max-height: 92vh;
+    padding: 12px 18px 10px 18px;
+    max-width: 360px;
+    overflow-y: auto;
+  }
+
+  .modal-icon-pod-center {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 6px;
+  }
+
+  .modal-icon-pod-center .cat-svg-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-gift-tag {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+    margin-bottom: 4px;
+  }
+
+  .modal-gift-title {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .modal-gift-desc {
+    font-size: 0.74rem;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+
+  .modal-gift-perk-box {
+    padding: 5px 8px;
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+  }
+
+  .modal-claim-btn {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  .modal-secondary-btn {
+    margin-top: 4px;
+    font-size: 0.72rem;
+  }
+
+  .whatsapp-phone-card {
+    max-height: 86vh;
+    transform: scale(0.85);
+    transform-origin: center center;
+    margin: 0 auto;
+  }
+}
+
