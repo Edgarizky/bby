@@ -23,12 +23,12 @@ export const config = {
     dateText: "15.10.2026 • 23rd Birthday",
     subtitle: "TAP FOR SURPRISE",
     // Foto-foto kolase halaman 1
-    heartPhoto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", // Foto bentuk Hati (Kiri atas)
-    polaroidPhoto: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop", // Foto Polaroid (Kiri bawah)
+    heartPhoto: "/images/celebration_couple_beach.jpg", // Foto bentuk Hati (Kiri atas)
+    polaroidPhoto: "/images/celebration_couple_flower.png", // Foto Polaroid (Kiri bawah)
     photostrip: [
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop", // Photostrip atas
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop", // Photostrip tengah
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600&auto=format&fit=crop", // Photostrip bawah
+      "/images/celebration_portrait_smile.jpg", // Photostrip atas
+      "/images/celebration_beach_night.jpg", // Photostrip tengah
+      "/images/celebration_cute_silly.png", // Photostrip bawah
     ],
   },
 
