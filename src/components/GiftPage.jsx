@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { X, Heart, MessageCircle } from 'lucide-react';
+import { X, Heart, Sparkles } from 'lucide-react';
 import { config } from '../config';
 
 export default function GiftPage({ onBack }) {
@@ -25,11 +25,6 @@ export default function GiftPage({ onBack }) {
     });
 
     setSelectedGift(cat);
-  };
-
-  const getWaCategoryUrl = (cat) => {
-    const text = cat.waText || `Halo sayang! Aku mau klaim kado ${cat.name} pilihanku di ulang tahun ke-23 ini! ❤️🎁`;
-    return `https://wa.me/${config.gift.claimWhatsappNumber}?text=${encodeURIComponent(text)}`;
   };
 
   // Helper rendering SVG icon pod for each category (cincin, tas, bunga, kue)
@@ -227,35 +222,48 @@ export default function GiftPage({ onBack }) {
               {renderCategoryIcon(selectedGift.id)}
             </div>
 
-            <div className="modal-gift-tag">SPECIAL 23RD BIRTHDAY GIFT</div>
+            <div className="modal-gift-tag">SPECIAL 23RD BIRTHDAY FOR DEWI</div>
             <h3 className="modal-gift-title">{selectedGift.title}</h3>
             
             <p className="modal-gift-desc">{selectedGift.desc}</p>
 
             {selectedGift.perk && (
               <div className="modal-gift-perk-box">
-                <Heart size={14} className="modal-perk-heart" />
+                <Sparkles size={14} className="modal-perk-heart" />
                 <span>{selectedGift.perk}</span>
               </div>
             )}
 
-            {/* Direct Claim via WhatsApp button */}
-            <a 
-              href={getWaCategoryUrl(selectedGift)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="modal-claim-btn"
+            {selectedGift.sweetNote && (
+              <div className="modal-sweet-note-box">
+                <Heart size={14} className="modal-perk-heart" style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />
+                <span>"{selectedGift.sweetNote}"</span>
+              </div>
+            )}
+
+            {/* Sweet Heart Reaction Button (Replacing WA claim button) */}
+            <button 
+              className="modal-sweet-heart-btn"
+              onClick={() => {
+                confetti({
+                  particleCount: 60,
+                  spread: 80,
+                  origin: { y: 0.6 },
+                  colors: ['#ff1493', '#ff69b4', '#ffd700', '#ffffff']
+                });
+                setSelectedGift(null);
+              }}
             >
-              <MessageCircle size={18} />
-              <span>Klaim Kado {selectedGift.name} via WA</span>
-            </a>
+              <Heart size={16} fill="#ffffff" />
+              <span>Aku Sayang Kamu Selamanya, Dewi ❤️</span>
+            </button>
 
             {/* Dismiss button */}
             <button 
               className="modal-secondary-btn"
               onClick={() => setSelectedGift(null)}
             >
-              Pilih Kado Lainnya ✨
+              Lihat Kado Lainnya ✨
             </button>
           </div>
         </div>

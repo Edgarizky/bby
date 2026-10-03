@@ -91,60 +91,58 @@ export const config = {
 
   // Halaman 6: Gift (Hadiah Spesial & Pilihan Kado)
   gift: {
-    badge: "SPECIAL 23RD BIRTHDAY GIFT",
-    title: "Kado Ulang Tahun Spesial 23rd 🎁",
+    badge: "SPECIAL 23RD BIRTHDAY SURPRISE",
+    title: "Kado Cinta Terindah untuk Bidadariku 🎁",
     voucherCode: "DEWI-23RD-FOREVER",
     dateText: "15.10.26 • 23rd Birthday",
-    heroTitle: "I love you, Love!",
-    heroSubtitle: "Always proud of you, always here with you.",
-    couplePhoto: "/images/couple_kiss_cheek.jpg",
+    heroTitle: "I love you with all my heart, Sayang ❤️",
+    heroSubtitle: "Di usiamu yang ke-23 ini, aku berjanji akan selalu ada di setiap langkahmu, mencintaimu tanpa henti, dan menjagamu selamanya.",
+    couplePhoto: "/images/gift_proposal.jpg",
     categories: [
       {
         id: "cincin",
         name: "Cincin",
         icon: "ring",
-        title: "Cincin Impian Spesial 💍",
-        desc: "Lambang cinta abadi dan janji selamanya untuk selalu ada di sampingmu.",
-        perk: "A gorgeous ring chosen with all my love, just for you.",
-        waText: "Halo Sayang! Aku mau klaim kado Cincin impianku di ultah ke-23 ini! 💍✨"
+        title: "Cincin Janji & Masa Depan Abadi 💍",
+        desc: "Sebuah cincin berkilau sebagai pengikat janji suci hatiku. Bahwa apapun yang terjadi di masa depan, tangan ini akan selalu menggenggam tanganmu erat, dan bahu ini akan selalu jadi tempat paling nyaman untukmu bersandar.",
+        perk: "Simbol ketulusan cinta tanpa akhir dari Edgar untuk Dewi tercinta.",
+        sweetNote: "Kamu adalah rumah tempat hatiku selalu ingin pulang, Sayang. 💍✨"
       },
       {
         id: "tas",
         name: "Tas",
         icon: "bag",
-        title: "Tas Wishlist Pilihanmu 👜",
-        desc: "Pilih tas idaman yang paling kamu suka, aku yang siap wujudkan!",
-        perk: "Shopping spree wishlist tas favorit pilihan kamu.",
-        waText: "Halo Sayang! Aku mau klaim kado Tas wishlist pilihanku! 👜💖"
+        title: "Tas Wishlist Impian Sang Ratu 👜",
+        desc: "Untuk wanitaku yang anggun, tangguh, dan sangat berharga. Apapun tas idaman yang kamu impikan, dengan segenap bahagia aku ingin mewujudkannya agar senyum manismu selalu merekah di setiap langkahmu.",
+        perk: "Kado istimewa untuk menemani setiap langkah bahagiamu meraih impian.",
+        sweetNote: "Melihatmu tersenyum bahagia adalah hadiah paling berharga buat aku. 💖"
       },
       {
         id: "bunga",
         name: "Bunga",
         icon: "flower",
-        title: "Buket Bunga Terindah 💐",
-        desc: "Buket bunga segar nan harum spesial khusus di hari ulang tahunmu yang ke-23.",
-        perk: "Grand fresh flower bouquet delivered straight with love.",
-        waText: "Halo Sayang! Aku mau klaim kado Buket Bunga spesialku! 💐🌹"
+        title: "Buket Mawar Terindah untuk Bunga Hatiku 💐",
+        desc: "Bunga-bunga mawar ini indah, tapi takkan pernah bisa menandingi kecantikan, kebaikan, dan ketulusan hatimu. Biarkan semerbaknya mengingatkanmu betapa dalamnya aku mengagumi dan menyayangimu di setiap detik.",
+        perk: "Bunga segar semerbak, seindah rasa cintaku yang terus mekar setiap hari.",
+        sweetNote: "Kamu adalah bunga paling cantik yang pernah mekar di hidupku. 🌸🌹"
       },
       {
         id: "kue",
         name: "Kue Ultah",
         icon: "cake",
-        title: "Kue Ulang Tahun Spesial 23rd 🎂",
-        desc: "Kue ulang tahun manis spesial untuk merayakan usia 23 tahun bidadari tercantikku!",
-        perk: "Sweet custom 23rd birthday cake & make a wish bersama aku.",
-        waText: "Halo Sayang! Aku mau klaim Kue Ulang Tahun ke-23 kita! 🎂🎉"
+        title: "Kue Ulang Tahun Manis & Make a Wish 🎂",
+        desc: "Selamat ulang tahun yang ke-23, my sweetest soulmate! Tiup lilinnya, pejamkan matamu, dan panjatkan semua harapan terindahmu. Aku akan selalu ada di sampingmu untuk mengaminkan dan memperjuangkannya bersamamu.",
+        perk: "Momen manis make a wish berdua yang akan selalu kita kenang selamanya.",
+        sweetNote: "Semoga semua doa dan bahagiamu selalu dipeluk semesta, Cintaku. 🕯️✨"
       }
     ],
     items: [
-      "✨ Dinner romantis di restoran favorit kamu (aku yang traktir!)",
-      "🛍️ Shopping spree wishlist pilihan kamu",
-      "💆 Pelukan hangat & dengerin curhat tanpa batas waktu",
-      "☕ Seharian bebas ngambek & dapat pelayanan ratu 24 jam!"
+      "✨ Dinner romantis berdua di tempat paling berkesan",
+      "🛍️ Wujudkan apapun wishlist impian yang bikin kamu tersenyum bahagia",
+      "💆 Pelukan ternyaman, kecupan hangat & dengerin ceritamu tanpa batas waktu",
+      "☕ Selalu jadi support system nomor satu di setiap mimpi dan langkahmu"
     ],
-    note: "Voucher ini berlaku selamanya dan tidak ada tanggal kadaluarsa. Klik tombol klaim untuk kirim ke WhatsApp aku! ❤️",
-    claimWhatsappNumber: "6281234567890", // Ganti dengan nomor WhatsApp kamu jika ingin klaim langsung
-    claimMessage: "Halo sayang! Aku udah buka webnya dan mau klaim kado ulang tahunku sekarang! ❤️🎁"
+    note: "Semua kado ini adalah tanda cintaku yang tulus untuk Dewi tercinta di usia 23 tahun. I love you to the moon and back! ❤️",
   },
 
   // Audio Latar Belakang (Sound TikTok Asli)
@@ -153,9 +151,11 @@ export const config = {
     autoPlay: true,
   },
 
-  // WhatsApp QR Code Info (Teks untuk dibagikan)
+  // Production URL & WhatsApp QR Code Info (Teks untuk dibagikan)
+  productionUrl: "https://bbyokta.biz.id",
   whatsappShare: {
-    chatPreviewSender: "HAPPY BITYHDAY BUBUBBB 🥳💖💖💖",
-    chatPreviewBubble: "COBA BUKA INI 👇",
+    chatPreviewSender: "HAPPY 23RD BIRTHDAY BUBUBBB 🥳💖💖💖",
+    chatPreviewBubble: "COBA BUKA INI, ADA SURPRISE SPESIAL BUAT KAMU SAYANG 👇❤️",
+    subtext: "Scan untuk buka kejutan kado virtual di bbyokta.biz.id"
   }
 };
