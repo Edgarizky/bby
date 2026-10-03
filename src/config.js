@@ -51,9 +51,9 @@ export const config = {
       { id: 1, url: "/images/memory_couple_dino.png", caption: "Cozy Night With You 🦖💖" },
       { id: 2, url: "/images/memory_couple_peace.png", caption: "Peace & Love Always ✌️✨" },
       { id: 3, url: "/images/celebration_couple_flower.png", caption: "Flowers for My Special Girl 🌸💐" },
-      { id: 4, url: "/images/memory_couple_beach.jpg", caption: "Sunset Walk & Sweet Breeze 🌅❤️" },
+      { id: 4, url: "/images/memory_birthday_cake.png", caption: "Make a Wish, Birthday Girl 🎂🕯️✨" },
       { id: 5, url: "/images/memory_couple_bee.png", caption: "Silly Faces, Pure Joy 🐝😋" },
-      { id: 6, url: "/images/celebration_cute_silly.png", caption: "Cutest Smile in the World 🌸🥰" }
+      { id: 6, url: "/images/memory_couple_beach.jpg", caption: "Sunset Walk & Sweet Breeze 🌅❤️" }
     ]
   },
 
