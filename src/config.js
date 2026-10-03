@@ -48,14 +48,12 @@ export const config = {
     title: "Our Memories",
     subtitle: "Here's to all the memories we've made... and all the ones we're yet to create.",
     photos: [
-      { id: 1, url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop", caption: "Sweet Smile 💖" },
-      { id: 2, url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop", caption: "Cute Angle ✨" },
-      { id: 3, url: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop", caption: "Favorite Photo 🌸" },
-      { id: 4, url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop", caption: "Night Walk 🌙" },
-      { id: 5, url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=800&auto=format&fit=crop", caption: "Silly Moments 😋" },
-      { id: 6, url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=800&auto=format&fit=crop", caption: "Random Trip 🚗" },
-      { id: 7, url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop", caption: "Golden Hour ☀️" },
-      { id: 8, url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop", caption: "Just You & Me ❤️" }
+      { id: 1, url: "/images/memory_couple_dino.png", caption: "Cozy Night With You 🦖💖" },
+      { id: 2, url: "/images/memory_couple_peace.png", caption: "Peace & Love Always ✌️✨" },
+      { id: 3, url: "/images/celebration_couple_flower.png", caption: "Flowers for My Special Girl 🌸💐" },
+      { id: 4, url: "/images/memory_couple_beach.jpg", caption: "Sunset Walk & Sweet Breeze 🌅❤️" },
+      { id: 5, url: "/images/memory_couple_bee.png", caption: "Silly Faces, Pure Joy 🐝😋" },
+      { id: 6, url: "/images/celebration_cute_silly.png", caption: "Cutest Smile in the World 🌸🥰" }
     ]
   },
 
