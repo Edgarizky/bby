@@ -222,7 +222,7 @@ export default function GiftPage({ onBack }) {
               {renderCategoryIcon(selectedGift.id)}
             </div>
 
-            <div className="modal-gift-tag">SPECIAL 23RD BIRTHDAY FOR DEWI</div>
+            <div className="modal-gift-tag">SPECIAL 23RD BIRTHDAY FOR YOU SAYAANG</div>
             <h3 className="modal-gift-title">{selectedGift.title}</h3>
             
             <p className="modal-gift-desc">{selectedGift.desc}</p>
@@ -241,29 +241,12 @@ export default function GiftPage({ onBack }) {
               </div>
             )}
 
-            {/* Sweet Heart Reaction Button (Replacing WA claim button) */}
-            <button 
-              className="modal-sweet-heart-btn"
-              onClick={() => {
-                confetti({
-                  particleCount: 60,
-                  spread: 80,
-                  origin: { y: 0.6 },
-                  colors: ['#ff1493', '#ff69b4', '#ffd700', '#ffffff']
-                });
-                setSelectedGift(null);
-              }}
-            >
-              <Heart size={16} fill="#ffffff" />
-              <span>Aku Sayang Kamu Selamanya, Dewi ❤️</span>
-            </button>
-
             {/* Dismiss button */}
             <button 
               className="modal-secondary-btn"
               onClick={() => setSelectedGift(null)}
             >
-              Lihat Kado Lainnya ✨
+              Tutup ✨
             </button>
           </div>
         </div>

@@ -105,7 +105,7 @@ export const config = {
         icon: "ring",
         title: "Cincin Janji & Masa Depan Abadi 💍",
         desc: "Sebuah cincin berkilau sebagai pengikat janji suci hatiku. Bahwa apapun yang terjadi di masa depan, tangan ini akan selalu menggenggam tanganmu erat, dan bahu ini akan selalu jadi tempat paling nyaman untukmu bersandar.",
-        perk: "Simbol ketulusan cinta tanpa akhir dari Edgar untuk Dewi tercinta.",
+        perk: "Simbol ketulusan cinta tanpa akhir dari Edgar untuk Sayang tercinta.",
         sweetNote: "Kamu adalah rumah tempat hatiku selalu ingin pulang, Sayang. 💍✨"
       },
       {
@@ -142,7 +142,7 @@ export const config = {
       "💆 Pelukan ternyaman, kecupan hangat & dengerin ceritamu tanpa batas waktu",
       "☕ Selalu jadi support system nomor satu di setiap mimpi dan langkahmu"
     ],
-    note: "Semua kado ini adalah tanda cintaku yang tulus untuk Dewi tercinta di usia 23 tahun. I love you to the moon and back! ❤️",
+    note: "Semua kado ini adalah tanda cintaku yang tulus untuk Sayang tercinta di usia 23 tahun. I love you to the moon and back! ❤️",
   },
 
   // Audio Latar Belakang (Sound TikTok Asli)

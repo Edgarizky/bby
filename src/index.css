@@ -4278,18 +4278,25 @@ body {
 }
 
 .modal-secondary-btn {
-  background: transparent;
-  border: none;
-  color: #8696a0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 10px 24px;
+  border-radius: 9999px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: color 0.2s;
+  margin-top: 6px;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 .modal-secondary-btn:hover {
-  color: #ffd8f5;
+  background: rgba(255, 13, 195, 0.35);
+  border-color: #ff0dc3;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 
